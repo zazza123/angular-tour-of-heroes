@@ -1,0 +1,51 @@
+**************************************
+    Collegare GitHub a Visual Studio Code
+**************************************
+- Installare Visual Studio Code (VSC)
+- Installare l'estensione di VSC "GitHub Pull Requests and Issues"
+    Link: https://code.visualstudio.com/docs/editor/github
+- Seguire la guida del link per collegare l'account e la repository.
+    - Sezione : Setting up a repository
+
+**************************************
+    Installare Node.js
+**************************************
+E' necessario installarlo per poter usare Angular.
+Sito Ufficiale: https://nodejs.org/en/
+- Mac : scaricare file .pkg e installarelo
+
+Controllare Versione:
+- Aprire terminale e digitare:
+npm ) npm - v  
+node) node - v
+
+Aggiornare NPM: npm update
+
+Aggiornare (tramite NPM Node Package Manager)
+Link Guida: https://phoenixnap.com/kb/update-node-js-version
+1.  Pulire le cache di npm usando il comando 'npm cache clean -f'
+2.  Installare il Version Manager 'npm install -g n'
+2.1 Problema di Permessi nell'installazione 'sudo chown -R $USER /usr/local/lib/node_modules'
+    Solo se la cartella di installazione di node è /usr/local, per fare check usare 'npm config get prefix'
+3. Installare le varie versioni:
+- Ultima versione stabile: n stable
+- Ultima versione: n latest
+- Installare versione specifica: n [version.number]
+
+PROBLEMI
+1) Quando aggiorno npm ed escono vulnerabilità digitare : npm audit fix
+
+**************************************
+    Installare Angular
+**************************************
+Link Utili:
+    1. (Ways to fix “-bash: ng: command not found”) : https://medium.com/@angela.amarapala/ways-to-fix-bash-ng-command-not-found-7f329745795
+Installare Angular
+1. Installare prima npm
+2. Usare 'npm install -g @angular/cli'
+
+Check Versione: 'ng v' o 'ng version'
+
+PROBLEMI
+1) Quando lancio Angular tramite 'ng serve' ed esce il warning 'global Angular CLI version greater than local version'
+    digitare 'npm install --save-dev @angular/cli@latest'

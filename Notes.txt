@@ -49,3 +49,15 @@ Check Versione: 'ng v' o 'ng version'
 PROBLEMI
 1) Quando lancio Angular tramite 'ng serve' ed esce il warning 'global Angular CLI version greater than local version'
     digitare 'npm install --save-dev @angular/cli@latest'
+
+**************************************
+    Conclusioni Installazioni e Avvio
+**************************************
+1) Installazioni:
+- Installare prima Node.js + npm
+- Installare Angular
+
+2) Aggiornamenti:
+- Aggiornare NPM: npm update
+- Aggiornare Node.js tramite Package Manager: n latest o n stable
+- Aggiornare Angular: np update

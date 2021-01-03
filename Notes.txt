@@ -61,3 +61,11 @@ PROBLEMI
 - Aggiornare NPM: npm update
 - Aggiornare Node.js tramite Package Manager: n latest o n stable
 - Aggiornare Angular: np update
+
+**************************************
+    In-memory Web API
+**************************************
+Per simulare le chiamate HTTP ad un server senza avere un server
+
+Installazione:
+- Digitare: npm install angular-in-memory-web-api --save

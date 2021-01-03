@@ -39,4 +39,20 @@ export class HeroDetailComponent implements OnInit {
     this.heroService.updateHero(this.hero)
       .subscribe(() => this.goBack());
   }
+
+  deletePower(power: string): void {
+    // Aggiorno i poteri all'eroe in evidenza
+    this.hero.powers = this.hero.powers.filter(p => p !== power);
+
+    // Chiamo il servizio per rimuoverlo su server
+    this.heroService.deletePower(this.hero, power).subscribe();
+  }
+
+  addPower(power: string): void {
+    // Aggiorno i poteri all'eroe in evidenza
+    this.hero.powers.push(power);
+
+    // Chiamo il servizio per aggiungerlo su server
+    this.heroService.addPower(this.hero, power).subscribe();
+  }
 }

@@ -28,3 +28,50 @@ label {
     color: #ccc;
     cursor: auto;
   }
+
+  div .power {
+    margin: 1px;
+    display: inline-block;
+    position: relative;
+    font-family: Arial;
+    font-size: small;
+    color: white;
+    background-color: #83a4b4;
+    border: none;
+    padding: 0px 0px 0px 5px;
+    border-radius: 4px;
+  }
+
+  div .power:hover {
+    //background-color: #5b7785;
+    bottom: .1em;
+  }
+
+  button.delete {
+    margin-top: 0;
+    width: 20px;
+    height: 25px;
+    background-color: #405061;
+    color: white;
+    border-radius: 0 4px 4px 0;
+    padding-left: 4px;
+    padding-right: 4px;
+  }
+
+  div .new-power label {
+    display: inline;
+    font-weight: normal;
+    font-size: small;
+    color: black;
+  }
+
+  div .new-power input {
+    height: unset;
+    font-weight: normal;
+    font-size: normal;
+    font-size: 0.5em;
+  }
+
+  div .new-power button {
+    margin-top: 5px;
+  }

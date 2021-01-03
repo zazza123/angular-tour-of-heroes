@@ -5,9 +5,9 @@ import { catchError, map, tap } from 'rxjs/operators';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 
 import { Hero } from './hero';
-import { HEROES } from './mock-heroes';
 import { MessageService } from './message.service'
 import { UrlResolver } from '@angular/compiler';
+import { HeroesComponent } from './heroes/heroes.component';
 
 @Injectable({
   providedIn: 'root'
@@ -37,14 +37,14 @@ export class HeroService {
     const url = `${this.heroesUrl}/${id}`;
     return this.http.get<Hero>(url).pipe(
       tap(_ => this.log(`fetched hero id=${id}`)),
-      catchError(this.handleError<Hero>(`getHero id=${id}`))
+      catchError(this.handleError<Hero>(`getHero id = ${id}`))
     );
   }
 
   /** PUT: update the hero on the server */
   updateHero(hero: Hero): Observable<any> {
     return this.http.put(this.heroesUrl, hero, this.httpOptions).pipe(
-      tap(_ => this.log(`updated hero id=${hero.id}`)),
+      tap(_ => this.log(`updated hero id = ${hero.id}`)),
       catchError(this.handleError<any>('updateHero'))
     );
   }
@@ -52,7 +52,7 @@ export class HeroService {
   /** POST: add a new hero to the server */
   addHero(hero: Hero): Observable<Hero> {
     return this.http.post<Hero>(this.heroesUrl, hero, this.httpOptions).pipe(
-      tap((newHero: Hero) => this.log(`added new hero with id=${newHero.id}`)),
+      tap((newHero: Hero) => this.log(`added new hero with id = ${newHero.id}`)),
       catchError(this.handleError<any>('addHero'))
     );
   }
@@ -63,8 +63,28 @@ export class HeroService {
     const url = `${this.heroesUrl}/${id}`;
 
     return this.http.delete<Hero>(url, this.httpOptions).pipe(
-      tap(_ => this.log(`deleted hero id=${id}`)),
+      tap(_ => this.log(`deleted hero id = ${id}`)),
       catchError(this.handleError<Hero>('deleteHero'))
+    );
+  }
+
+  /** PUT: delete the hero's power from the server
+   *  Update the hero by removing the power from its list.
+   */
+  deletePower(hero: Hero, power: string): Observable<Hero> {
+    return this.http.put(this.heroesUrl, hero, this.httpOptions).pipe(
+      tap(_ => this.log(`removed the power "${power}" to hero id = ${hero.id}`)),
+      catchError(this.handleError<any>('removedPower'))
+    );
+  }
+
+  /** PUT: add new power to a hero
+   *  Update the hero by adding the power to its list.
+   */
+  addPower(hero: Hero, power: string): Observable<Hero> {
+    return this.http.put(this.heroesUrl, hero, this.httpOptions).pipe(
+      tap(_ => this.log(`added the power "${power}" to hero id = ${hero.id}`)),
+      catchError(this.handleError<any>('addPower'))
     );
   }
 

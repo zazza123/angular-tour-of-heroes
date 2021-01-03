@@ -49,6 +49,7 @@ export class HeroDetailComponent implements OnInit {
   }
 
   addPower(power: string): void {
+    if(!power) { return; }
     // Aggiorno i poteri all'eroe in evidenza
     this.hero.powers.push(power);
 
